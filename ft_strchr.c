@@ -6,7 +6,7 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:22:04 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/19 15:49:18 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/04/20 14:59:04 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strchr(const char *str, int c)
 	while (str[i] != '\0')
 	{
 		if (str[i] == c % 256)
-			return ((unsigned char *)(str + i));
+			return ((char *)(str + i));
 		i++;
 	}
 	if (str[i] == c)

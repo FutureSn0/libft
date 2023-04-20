@@ -2,7 +2,7 @@ NAME = libft.a
 
 CC = gcc
 AR = ar
-CFLAG = -Wextra -Wall -Werror
+CFLAGS = -Wextra -Wall -Werror
 RM = rm -f
 
 SRCS = ft_atoi.c \
@@ -42,7 +42,10 @@ SRCS = ft_atoi.c \
 
 OBJ = $(SRCS:.c=.o)
 
-%.o: %.c
+HEADER = libft.h
+
+
+%.o: %.c $(HEADER)
 	$(CC) -c $(CFLAGS) $?
 
 all: $(NAME)
