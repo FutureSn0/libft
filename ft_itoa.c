@@ -6,14 +6,13 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 11:17:30 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/19 14:34:05 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/04/20 13:33:59 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stddef.h>
 
-int	ft_intlen(int n, int base)
+static int	ft_intlen(int n, int base)
 {
 	int	len;
 

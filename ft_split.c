@@ -6,14 +6,14 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 13:11:09 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/19 11:08:57 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/04/20 13:35:01 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stddef.h>
 
-size_t	ft_len(const char *s, char c)
+static size_t	ft_len(const char *s, char c)
 {
 	size_t	res;
 
@@ -32,7 +32,7 @@ size_t	ft_len(const char *s, char c)
 	return (res);
 }
 
-char	*ft_strncpy(char *dest, const char *src, unsigned int n)
+static char	*ft_strncpy(char *dest, const char *src, unsigned int n)
 {
 	unsigned int	i;
 
@@ -47,7 +47,7 @@ char	*ft_strncpy(char *dest, const char *src, unsigned int n)
 	return (dest);
 }
 
-char	*ft_strndup(const char *s, size_t n)
+static char	*ft_strndup(const char *s, size_t n)
 {
 	char	*str;
 

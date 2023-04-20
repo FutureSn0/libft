@@ -6,14 +6,14 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 15:43:00 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/07 13:19:29 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/04/20 13:39:51 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stddef.h>
 
-int	ft_strlentrim(char const *str, char const *cut)
+static int	ft_strlentrim(char const *str, char const *cut)
 {
 	size_t	i;
 	size_t	j;
@@ -37,7 +37,7 @@ int	ft_strlentrim(char const *str, char const *cut)
 	return (i - j);
 }
 
-char	*ft_strchr(char const *str, int c)
+static char	*ft_strchr(char const *str, int c)
 {
 	int	i;
 

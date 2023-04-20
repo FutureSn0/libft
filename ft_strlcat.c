@@ -6,21 +6,19 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 14:51:00 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/12 14:18:11 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/04/20 12:50:42 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	ft_strlen(const char *str)
+static int	ft_strlen(const char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }
 

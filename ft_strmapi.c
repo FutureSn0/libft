@@ -6,13 +6,13 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 14:43:33 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/11 15:53:58 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/04/20 13:39:06 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(const char *str)
+static int	ft_strlen(const char *str)
 {
 	int	i;
 

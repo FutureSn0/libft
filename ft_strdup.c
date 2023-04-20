@@ -6,13 +6,13 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:22:18 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/13 15:38:58 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/04/20 13:32:14 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(const char *str)
+static int	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strcpy(char *dest, const char *src)
+static char	*ft_strcpy(char *dest, const char *src)
 {
 	int	i;
 
