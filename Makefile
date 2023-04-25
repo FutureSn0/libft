@@ -44,9 +44,8 @@ OBJ = $(SRCS:.c=.o)
 
 HEADER = libft.h
 
-
 %.o: %.c $(HEADER)
-	$(CC) -c $(CFLAGS) $?
+	$(CC) -c $(CFLAGS) $< -o $@
 
 all: $(NAME)
 
@@ -60,3 +59,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: clean all
+
+.PHONY: all clean fclean re
