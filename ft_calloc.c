@@ -6,7 +6,7 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:01:17 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/14 14:36:30 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/04/26 10:45:40 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	*ft_calloc(size_t nitems, size_t size)
 	size_t	i;
 	void	*ptr;
 
+	i = 0;
 	total = nitems * size;
 	ptr = malloc(total);
 	if (nitems == SIZE_MAX && size == SIZE_MAX)
