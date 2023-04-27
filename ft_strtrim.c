@@ -6,35 +6,21 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 15:43:00 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/20 13:39:51 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/04/27 10:21:39 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stddef.h>
 
-static int	ft_strlentrim(char const *str, char const *cut)
+static size_t	ft_strlen(char const *s)
 {
 	size_t	i;
-	size_t	j;
-	size_t	k;
 
 	i = 0;
-	j = 0;
-	while (str[i] != '\0')
-	{
-		k = 0;
-		while (cut[k] != '\0')
-		{
-			if (str[i] == cut[k])
-			{
-				j++;
-			}
-			k++;
-		}
+	while (s[i] != '\0')
 		i++;
-	}
-	return (i - j);
+	return (i);
 }
 
 static char	*ft_strchr(char const *str, int c)
@@ -44,37 +30,50 @@ static char	*ft_strchr(char const *str, int c)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == c)
-		{
+		if (str[i] == c % 256)
 			return ((char *)(str + i));
-		}
 		i++;
 	}
+	if (str[i] == c)
+		return ((char *)(str + i));
 	return (0);
+}
+
+static char	*ft_strncpy(char *dest, char const *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	if (!dest)
+		return (0);
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+		dest[i++] = '\0';
+	return (dest);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*start;
+	char	*end;
 	char	*arr;
-	size_t	i;
-	size_t	j;
 	size_t	len;
 
-	i = 0;
-	j = 0;
-	len = ft_strlentrim(s1, set);
-	arr = (char *)(malloc(len + 1));
-	if (arr == NULL)
-		return (0);
-	while (i < len)
-	{
-		if (ft_strchr(set, s1[j]) == NULL)
-		{
-			arr[i] = s1[j];
-			i++;
-		}
-		j++;
-	}
-	arr[i] = '\0';
+	start = (char *)s1;
+	end = (char *)s1 + ft_strlen(s1) - 1;
+	while (*start && ft_strchr(set, *start))
+		start++;
+	while (end > start && ft_strchr(set, *end))
+		end--;
+	len = end - start + 1;
+	arr = (char *)malloc(len + 1);
+	if (!arr)
+		return (NULL);
+	ft_strncpy(arr, start, len);
+	arr[len] = '\0';
 	return (arr);
 }
