@@ -6,7 +6,7 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:22:04 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/17 16:05:42 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/04/27 12:50:06 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *str, int c)
 	size_t	i;
 
 	i = ft_strlen(str);
-	if (c == 0)
+	if ((char)c == 0)
 		return ((char *)(str + i));
 	while (i > 0)
 	{
