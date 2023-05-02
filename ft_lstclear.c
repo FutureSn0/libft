@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/05 10:18:46 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/28 10:10:24 by aapryce          ###   ########.fr       */
+/*   Created: 2023/05/02 11:35:28 by aapryce           #+#    #+#             */
+/*   Updated: 2023/05/02 14:57:10 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char		*dest_ptr;
-	const char	*src_ptr;
+	t_list	*temp;
 
-	if (!dest || !src)
-		return (dest);
-	dest_ptr = (char *)dest;
-	src_ptr = (const char *)src;
-	if (src_ptr < dest_ptr)
-		while (n-- > 0)
-			*(dest_ptr + n) = *(src_ptr + n);
-	else
-		while (n-- > 0)
-			*(dest_ptr++) = *(src_ptr++);
-	return (dest);
+	if (*lst == NULL)
+		return ;
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
+	}
 }
