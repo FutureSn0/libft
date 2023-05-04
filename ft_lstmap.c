@@ -6,7 +6,7 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 12:57:46 by aapryce           #+#    #+#             */
-/*   Updated: 2023/05/02 15:19:23 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/05/04 10:41:32 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_node;
+	void	*temp;
 
 	new_list = 0;
 	while (lst != NULL)
 	{
-		new_node = ft_lstnew(f(lst->content));
+		temp = f(lst->content);
+		new_node = ft_lstnew(temp);
 		if (new_node == NULL)
 		{
+			del(temp);
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
