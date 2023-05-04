@@ -6,12 +6,13 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 13:11:09 by aapryce           #+#    #+#             */
-/*   Updated: 2023/05/04 10:51:01 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/05/04 14:47:01 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stddef.h>
+#include "libft.h"
 
 static size_t	ft_len(const char *s, char c)
 {
@@ -32,44 +33,23 @@ static size_t	ft_len(const char *s, char c)
 	return (res);
 }
 
-static char	*ft_strncpy(char *dest, const char *src, unsigned int n)
+static char	**ft_free_split(char **s, int len)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (src[i] != '\0' && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-		dest[i++] = '\0';
-	return (dest);
-}
-
-static char	*ft_strndup(const char *s, size_t n)
-{
-	char	*str;
-
-	str = (char *)malloc(n + 1);
-	if (str == NULL)
-		return (0);
-	ft_strncpy(str, s, n);
-	str[n] = '\0';
-	return (str);
+	while (len--)
+		free(s[len]);
+	free(s);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t		i;
-	size_t		len;
-	char		**res;
+	size_t	i;
+	size_t	len;
+	char	**res;
 
-	if (!s)
-		return (0);
 	i = 0;
 	res = (char **)malloc(sizeof(char *) * (ft_len(s, c) + 1));
-	if (res == NULL)
+	if (!res || !s)
 		return (NULL);
 	while (*s != '\0')
 	{
@@ -78,7 +58,9 @@ char	**ft_split(char const *s, char c)
 			len = 0;
 			while (*s != '\0' && *s != c && ++len)
 				s++;
-			res[i++] = ft_strndup(s - len, len);
+			res[i++] = ft_substr(s - len, 0, len);
+			if (!res[i - 1])
+				return (ft_free_split(res, i));
 		}
 		else
 			s++;
