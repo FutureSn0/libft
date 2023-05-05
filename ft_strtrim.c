@@ -6,7 +6,7 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 15:43:00 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/27 10:21:39 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/05/05 12:22:26 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*arr;
 	size_t	len;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = (char *)s1;
 	end = (char *)s1 + ft_strlen(s1) - 1;
 	while (*start && ft_strchr(set, *start))

@@ -6,7 +6,7 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 14:51:00 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/21 09:09:45 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/05/05 13:18:05 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	destlen;
 	size_t	srclen;
 
+	if ((!dest || !src) && size == 0)
+		return (0);
 	i = 0;
 	destlen = ft_strlen(dest);
 	srclen = ft_strlen(src);

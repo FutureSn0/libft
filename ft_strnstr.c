@@ -6,7 +6,7 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 13:44:04 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/18 12:40:59 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/05/05 13:16:04 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if ((!str || !to_find) && len == 0)
+		return (NULL);
 	i = 0;
 	j = 0;
 	if (to_find[j] == '\0')
