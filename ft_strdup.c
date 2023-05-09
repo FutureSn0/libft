@@ -6,23 +6,12 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:22:18 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/20 13:32:14 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/05/09 09:25:41 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-static int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 static char	*ft_strcpy(char *dest, const char *src)
 {

@@ -6,38 +6,13 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 15:43:00 by aapryce           #+#    #+#             */
-/*   Updated: 2023/05/05 12:22:26 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/05/09 09:31:21 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stddef.h>
-
-static size_t	ft_strlen(char const *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-static char	*ft_strchr(char const *str, int c)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == c % 256)
-			return ((char *)(str + i));
-		i++;
-	}
-	if (str[i] == c)
-		return ((char *)(str + i));
-	return (0);
-}
+#include "libft.h"
 
 static char	*ft_strncpy(char *dest, char const *src, size_t n)
 {

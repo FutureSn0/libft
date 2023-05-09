@@ -6,7 +6,7 @@
 /*   By: aapryce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:17:21 by aapryce           #+#    #+#             */
-/*   Updated: 2023/04/14 10:05:34 by aapryce          ###   ########.fr       */
+/*   Updated: 2023/05/09 09:28:30 by aapryce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (sarr == NULL)
 		return (0);
 	while (i < len)
-	{
-		sarr[i] = s[start];
-		start++;
-		i++;
-	}
+		sarr[i++] = s[start++];
 	sarr[i] = '\0';
 	return (sarr);
 }
